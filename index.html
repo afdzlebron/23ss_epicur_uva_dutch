@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Onsen UI framework -->
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+
+<body>
+    <!-- Use ons-navigator to manage page transitions -->
+    <ons-navigator id="navigator" page="home.html"></ons-navigator>
+
+    <!-- Define the home page template -->
+    <template id="home.html">
+        <ons-page>
+            <!-- Use ons-toolbar to display a header -->
+            <ons-toolbar>
+                <div class="center">Learning App</div>
+            </ons-toolbar>
+
+            <!-- Use ons-list to display menu options -->
+            <ons-list>
+                <ons-list-item tappable onclick="fn.load('learn.html')">
+                    Learn
+                </ons-list-item>
+                <ons-list-item tappable onclick="fn.load('add.html')">
+                    Add words
+                </ons-list-item>
+                <ons-list-item tappable onclick="fn.load('stats.html')">
+                    Statistics
+                </ons-list-item>
+                <ons-list-item tappable onclick="fn.load('save.html')">
+                    Save changes
+                </ons-list-item>
+            </ons-list>
+        </ons-page>
+    </template>
+
+    <!-- Define the learn page template -->
+    <template id="learn.html">
+        <ons-page>
+            <!-- Use ons-toolbar to display a header with a back button -->
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center">Learn</div>
+            </ons-toolbar>
+
+            <!-- Use ons-card to display a word and its collocations -->
+            <div id="word-card" class="card">
+                <!-- Use JavaScript to load a random word from the JSON file -->
+                <!-- Use ons-button to display the collocations and check the answer -->
+                <!-- Use ons-icon to display feedback icons -->
+            </div>
+
+            <!-- Use ons-fab to display a button to go to the next word -->
+            <ons-fab position="bottom right" onclick="fn.nextWord()">
+                <ons-icon icon="md-arrow-forward"></ons-icon>
+            </ons-fab>
+        </ons-page>
+    </template>
+
+    <!-- Define the add words page template -->
+    <template id="add.html">
+        <ons-page>
+            <!-- Use ons-toolbar to display a header with a back button -->
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center">Add words</div>
+            </ons-toolbar>
+
+            <!-- Use ons-form to collect user input for adding words and collocations -->
+            <!-- Use JavaScript to validate the input and append it to the JSON file -->
+        </ons-page>
+    </template>
+
+    <!-- Define the statistics page template -->
+    <template id="stats.html">
+        <ons-page>
+            <!-- Use ons-toolbar to display a header with a back button -->
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center">Statistics</div>
+            </ons-toolbar>
+
+            <!-- Use ons-chart to display a chart of the learning rate statistics -->
+            <!-- Use JavaScript to calculate and update the statistics from the JSON file -->
+        </ons-page>
+    </template>
+
+    <!-- Define the save changes page template -->
+    <template id="save.html">
+        <ons-page>
+            <!-- Use ons-toolbar to display a header with a back button -->
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center">Save changes</div>
+            </ons-toolbar>
+
+            <!-- Use ons-input to collect user input for GitHub account and password -->
+            <!-- Use JavaScript to validate the input and use GitHub API to save changes -->
+        </ons-page>
+    </template>
+
+    <!-- Load custom JavaScript file -->
+    <script src="app.js"></script>
+</body>
+
+</html>
